@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="utf-8" />
+
+		<meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- for the most new compile in webwiewers-->
+
+		<link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../jslibrary/baseAnime.js"></script>
+		<script src="../jslibrary/animeRezolution.js"></script>
+		<script src="../jslibrary/resolutionTree.js"></script>
+
+		<title>Úvod do Logiky-rezoluce-stromy</title>
+	</head>
+
+	<body>
+		<!--real head-->
+		<header>
+			<div class="flags">
+				<a href="../uk/resolutionTree.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+				<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+			</div>
+
+			<h1>Rezoluce-stromy</h1>
+		</header>
+
+		<!--menu-->
+		<nav>
+			<hr class="menuHr"/>
+			<table>
+				<tr>
+					<td>
+					<ul class="menu">
+						<li class="first">
+							<a href="index.html">Domů</a>
+						</li>
+					</ul></td>
+					<td>
+					<ul class="menu">
+						<li>
+							<a href="zakladniLogickeSpojky.html">Základní spojky</a>
+						</li>
+					</ul></td>
+					<td>
+					<ul class="menu">
+						<li>
+							<a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>
+								<li>
+									<a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a>
+								</li>
+								<li>
+									<a href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a>
+								</li>
+								<li>
+									<a href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a>
+								</li>
+							</ul>
+						</li>
+					</ul></td>
+					<td>
+					<ul class="menu">
+						<li>
+							<a href="KNFDNF.html">KNF,DNF</a>
+						</li>
+					</ul></td>
+					<td>
+					<ul class="menu">
+						<li>
+							<a href="rezoluce.html">Rezoluce</a>
+							<ul id="podmenu2" class="clearfix">
+									<li><a class="active" href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+									<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+									<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+									<li><a href="rezoluceLD.html">LD rezoluce</a></li>
+									<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+									<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>
+					</ul></td>
+				</tr>
+			</table>
+			<hr class="menuHr"/>
+		</nav>
+
+		<!--real body-->
+		<div class="insertBody">
+			<div>
+				<p>	Rezoluční strom = obecná rezoluce
+					<br>
+					Vytvořte strom rezolučního vyvrácení S (dokažte S &#880; <sub>R</sub> &square; ), je-li:
+					<br>
+				
+					</p>
+					<br>
+					<div class="animbuttons">
+						<button id="buttonAnimSlower">
+							zpomalit
+						</button>
+						<button id="buttonAnimPlay">
+							&#9658;
+						</button>
+						<button id="buttonAnimFaster">
+							zrychlit
+						</button>
+						<button id="buttonAnimReload">
+							obnovit
+						</button>
+						<button id="buttonAnimEnd">
+							na konec
+						</button>
+						rychlost přehrání: <span id="timeControl">2.00 s </span>
+					</div>
+					<br>
+
+					<table class="resolutionFormula">
+						<tr>
+							<td>S = {</td><td>{p,r},</td><td>{q,¬r},</td><td>{¬q},</td><td>{¬p,t},</td><td>{¬s},</td><td>{s,¬t}</td><td>}</td>
+						</tr>
+					</table>
+
+				<br>
+
+				<div class="animResolution">
+					<table id="animTree" border="0">
+						<tbody align="center">
+							<tr>
+								<td> </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br />
+
+			</div>
+		</div>
+		
+		<hr />
+		<footer class="copyright">
+			<h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * autorem je student MUNI FI Marek Bartošek 2014 * aktualizovano 16.1.2015 17:00</h6>
+		</footer>
+
+	</body>
+</html>

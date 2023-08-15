@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">           
+
+
+        <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="jslibrary/LogicLibrary.js"></script>
+        <script src="jslibrary/bartosekLogic.js"></script-->
+
+        <title>Introduction to Logic-resolution</title>
+    </head>
+    
+    <body>
+    	<!--real head-->
+    	<header>
+    		<div class="flags">
+    			<a href="../cs/rezoluce.html"><img src="../style/img/flags/flag_czech_icon.png" width="30" height="20" alt="cz"></a>
+    			<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+
+    		
+        	<h1>Resolution</h1>
+        </header>
+        
+        <!--menu-->
+        <nav>
+        <hr class="menuHr"/> 
+		<table>
+		<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first" ><a href="index.html">Home</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a  href="basicConnections.html">Basic connections</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a  href="truthTable.html">Truth Table</a>
+							<ul>
+								<li><a href="truthTableTautology.html">- tautology</a></li>
+								<li><a href="truthTableContradiction.html">- contradiction</a></li>
+								<li><a href="truthTableInterpretation.html">- interpretation</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">CNF, DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a class="active" href="resolution.html">Resolutions</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="resolutionTree.html">Resolution-tree</a></li>
+								<li><a href="resolutionLinear.html">Linear resolution</a></li>
+								<li><a href="resolutionLI.html">LI resolution</a></li>
+								<li><a href="resolutionLD.html">LD resolution</a></li>
+								<li><a href="resolutionSLD.html">SLD resolution</a></li>
+								<!--li><a href="resolutionProlog.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>            
+    		</tr>
+		</table>
+        <hr class="menuHr"/>
+        </nav>
+
+        <!--real body-->
+        <div class="insertBody">        
+        <!--vysvetlujici text-->
+         <article><h5>text area</h5>
+         		 
+         		<ul>
+         			Resolution is used to search for the truth of the whole logical formulas using logical disproof: &square; . <br>
+         			<br>
+         			<li>
+         				All samples will have a single entry: taken from practice 6.1<br>
+         				Disproof the following set of formulas:<br>
+         				S = {(q &and; r) &rArr; p, q &rArr; (r &and; &not; p), &not; ( &not; r &or; &not; ( r &rArr; p)), p &rArr; q}<br>
+         				after the transfer to the sets:<br>
+         				{p, &not; q, &not; r}, {r, &not; q}, {&not; q, &not; p}, {r}, {p, &not; r}, {q, &not; p}<br>
+         				         				
+         			</li>
+         			<br>
+         			Here is a list of all possible resolutions. Only the highlighted ones can be found on this pages. <br>
+         			<li>Resolution propositional logic</li>
+         			<ul>
+         				<li><b>Resolution tree (universal resolution)</b></li>
+         				<li>Refinements resolution</li>
+         				<ul>
+         					<li>T-resolution</li>
+         					<li>A-resolution</li>
+         					<li>F-resolution</li>
+         					<li>Support-resolution</li>
+         					<li><b>Linear resolution</b></li>
+         					<li><b>LI resolution</b></li>
+         					<li><b>LD resolution</b></li>
+         					<li><b>SLD resolution</b></li>
+         				</ul>
+         			</ul>
+         			<li>Resolution predicate logic</li>
+         			<ul>
+         				<li>Linear resolution</li>
+         				<li>LI resolution</li>
+         				<li>LD resolution</li>
+         				<li>SLD resolution</li>
+         			</ul>         			
+         			<li>SLD resolution prolog</li>
+         		</ul>
+         	
+         	<br />
+         		           		
+         	
+         </article> 
+        </div>
+        
+    	<footer id="copyright"><hr /><h6>Optimized for Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Made by student MUNI FI Marek Bartošek 2014 * Updated 16.1.2015 13:30</h6></footer>   
+    
+    </body>
+</html>

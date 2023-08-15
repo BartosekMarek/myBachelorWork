@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">           
+
+
+        <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="jslibrary/LogicLibrary.js"></script>
+        <script src="jslibrary/bartosekLogic.js"></script-->
+
+        <title>Úvod do logiky-rezoluce</title>
+    </head>
+    
+    <body>
+    	<!--real head-->
+    	<header>
+    		<div class="flags">
+    			<a href="../uk/resolution.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    			<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+
+    		
+        	<h1>Rezoluce</h1>
+        </header>
+        
+        <!--menu-->
+        <nav>
+        <hr class="menuHr"/> 
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"><a href="index.html">Domů</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="zakladniLogickeSpojky.html">Základní spojky</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>	
+								<li><a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a></li>
+								<li><a href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a></li>
+								<li><a href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">KNF,DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a class="active" href="rezoluce.html">Rezoluce</a>
+							<ul>
+								<li><a href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+								<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+								<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+								<li><a href="rezoluceLD.html">LD rezoluce</a></li>
+								<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+								<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+		</table>
+        <hr class="menuHr"/>
+        </nav>
+
+        <!--real body-->
+        <div class="insertBody">        
+        <!--vysvetlujici text-->
+         <article><h5>vysvětlující text k animaci</h5>
+         		 
+         		<ul>
+         			Rezoluce slouží k hledání pravdivosti celé logické formule pomocí logické vyvrácení: &square; . <br>
+         			<br>
+         			<li>
+         				Všechny ukázky budou mít jednotné zadání: převzato ze cvičení 6.1<br>
+         				Vyvraťte následující množinu formulí:<br>
+         				S = {(q &and; r) &rArr; p, q &rArr; (r &and; &not; p), &not; ( &not; r &or; &not; ( r &rArr; p)), p &rArr; q}<br>
+         				po převodu na množiny:<br>
+         				{p, &not; q, &not; r}, {r, &not; q}, {&not; q, &not; p}, {r}, {p, &not; r}, {q, &not; p}<br>
+         				         				
+         			</li>
+         			<br>
+         			Zde je vypsán seznam všech možných rezolucí, na těchto stránkách se animuje jen zvýrazněné. <br>
+         			<li>Rezoluce výrokové logiky</li>
+         			<ul>
+         				<li><b>Rezoluční strom (obecná rezoluce)</b></li>
+         				<li>Zjemnění rezoluce</li>
+         				<ul>
+         					<li>T-rezoluce</li>
+         					<li>A-rezoluce</li>
+         					<li>F-rezoluce</li>
+         					<li>Support-rezoluce</li>
+         					<li><b>Lineární rezoluce</b></li>
+         					<li><b>LI rezoluce</b></li>
+         					<li><b>LD rezoluce</b></li>
+         					<li><b>SLD rezoluce</b></li>
+         				</ul>
+         			</ul>
+         			<li>Rezoluce predikátové logiky</li>
+         			<ul>
+         				<li>Lineární rezoluce</li>
+         				<li>LI rezoluce</li>
+         				<li>LD rezoluce</li>
+         				<li>SLD rezoluce</li>
+         			</ul>         			
+         			<li>SLD rezoluce prolog</li>
+         		</ul>
+         	
+         	<br />
+         		           		
+         	
+         </article> 
+        </div>
+        
+    	<footer id="copyright"><hr /><h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * autorem je student MUNI FI Marek Bartošek 2014 * aktualizovano 16.1.2015 13:30</h6></footer>   
+    
+    </body>
+</html>

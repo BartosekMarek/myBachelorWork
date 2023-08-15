@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="0.1.0 - 10.11.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">          
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--script src="jslibrary/LogicLibrary.js"></script-->
+        <script src="../jslibrary/baseAnime.js"></script>
+        <!--script src="../jslibrary/animeTrueTable.js"></script-->
+        <script src="../jslibrary/trueTableInterpretation.js"></script>
+
+        <title>Úvod do logiky-pravdivostni tabulka-interpretace</title>
+    </head>
+    
+    <body>
+    	<!--real head-->
+   		<header>
+    		<div class="flags">
+    			<a href="../uk/truthTableInterpretation.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    			<!--a href="../svk/trueTableInterpretation.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+    		
+        	<h1>Pravdivostní tabulka-interpretace</h1>
+        </header>
+        
+        <!--menu-->
+		<nav>
+		<hr class="menuHr"/> 
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"><a href="index.html">Domů</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="zakladniLogickeSpojky.html">Základní spojky</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>	
+								<li><a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a></li>
+								<li><a href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a></li>
+								<li><a class="active" href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">KNF,DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="rezoluce.html">Rezoluce</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+								<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+								<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+								<li><a href="rezoluceLD.html">LD rezoluce</a></li>
+								<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+								<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+		</table>
+		<hr class="menuHr"/> 
+		</nav>        
+        
+        <!--real body-->
+        <div class="insertBody">
+        <!--vysvetlujici text-->
+         <div id="lText">
+         <article id="learnText"><h5>vysvětlující text k animaci</h5>
+         	
+         	<p>Mějme formuli (a	&rArr; b) &hArr; (&not; b &or; a) a následující interpretaci, kterou si sami zvolíte:
+         			
+         			<div>
+					I:I(a)=
+					<input id="radioA" type="radio" name="A" value="true" checked="checked"> 1
+					<input type="radio" name="A" value="false"> 0
+					<br>
+					I:I(b)=
+					<input id="radioB" type="radio" name="B" value="true" checked="checked"> 1
+					<input type="radio" name="B" value="false"> 0
+					</div>		
+         	</p>
+         	<!-- nebo lepsi pouzit ze slidu: ((p ∧ q) ⇒ (¬¬q ∨ r)) ⇔ (¬p ⇒ r) -->
+         </article> 
+
+        </div>
+        
+         <article >
+        	<h5>Animační tabulka s prepinaci promennych</h5> 
+        	        	
+        	<section class="animeTables">
+        		
+        			<table id="animTable1" border="1">
+        			<colgroup>
+						<col class="variablesColumn" span="2">
+						<col class="variables" span="8">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>b					</th>
+							<th>(a					</th>
+							<th>&rArr;				</th>
+							<th>b)					</th>
+							<th>&hArr;				</th>
+							<th>(&not;				</th>
+							<th>b					</th>
+							<th>&or;				</th>
+							<th>a)					</th>
+						</tr>
+						
+						<tr>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+
+					</tbody>
+					</table>
+					<br />
+					
+					<!--prepinac true nebo false u promennych-->
+
+
+				<div class="animbuttons">
+					<button id="buttonAnimSlower">
+						zpomalit
+					</button>
+					
+					
+					<button id="buttonAnimPlay">
+							 &#9658;
+					</button>
+					
+					<button id="buttonAnimFaster">
+						zrychlit	
+					</button>
+					<!--button id="buttonAnimEnd">
+						na konec
+					</button-->
+					rychlost přehrání:<span id="timeControl">2.00 s </span>
+				</div>
+				 	
+        	</section>   
+         </article>
+        </div>
+       
+		<!--div class="notes">
+		<p>Konvence barev: <span class="red">červená</span> se užívá pro zvýraznění spojek. <span class="blue">Modrá</span> pro zvýraznění proměnných ze kterých rozhoduji,
+        			 a <span class="green">zelená</span> je nakonec výsledná proměnná.</p>
+       	</div-->
+        <hr />
+    	<footer class="copyright"><h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * autorem je student MUNI FI Marek Bartošek 2014 * aktualizovano 16.1.2015 11:30</h6></footer> 
+    
+    </body>
+</html>

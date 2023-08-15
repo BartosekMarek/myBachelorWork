@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">           
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../jslibrary/baseAnime.js"></script>
+        <script src="../jslibrary/basicLogicConnects.js"></script>
+        
+        <title>Úvod do logiky-základní logické spojky</title>        
+	</head>
+
+<!--
+	ID:		-animTableNot
+			-animNot
+			-animTableAnd
+			-animAnd
+			-animTableOr
+			-animOr
+			-animTableImpl
+			-animImpl
+			-animTableEque
+			-animEque
+			
+			-buttonAnimSlower
+			-buttonAnimFaster
+			-control
+	
+	class: 	-insertBody
+			-fiveTables
+			-animeTables	
+-->
+	<body>
+    	<!--real head-->
+    	<header>
+    		<div class="flags">
+    			<a href="../uk/basicConnections.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    			<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+		
+			<h1>Základní Logické Spojky</h1>
+		</header>
+        
+		<!--menu-->        
+        <nav>
+        <hr class="menuHr"/> 
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"><a href="index.html">Domů</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a class="active" href="zakladniLogickeSpojky.html">Základní spojky</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>	
+								<li><a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a></li>
+								<li><a href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a></li>
+								<li><a href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">KNF,DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="rezoluce.html">Rezoluce</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+								<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+								<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+								<li><a href="rezoluceLD.html">LD rezoluce</a></li>
+								<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+								<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+		</table>
+        <hr class="menuHr"/>
+        </nav>
+
+		<!--real body-->
+        <div class="insertBody">
+
+        		<ul>
+        		Popis pravidel pro spojky:
+        		<li> Negace (&not; ) obrací hodnotu. Z 0 udělá 1 a obráceně. </li>
+        		<li> Konjunkce (&and; ) je vždy lež, když se objeví jakákoli 0.</li>
+        		<li> Disjunkce (&or; ) je vždy pravda, když se objeví jakákoli 1.</li>
+        		<li> Implikace (&rArr; ) když začíná 0, tak je automaticky pravda. Jen v případě 1=>0 je 0.</li>
+        		<li> Ekvivalence (&hArr; ) když oba nejsou stejné, tak je to 0.       	</li>	
+        		Není umožněno pouštění více animací najednou.  
+        		</ul>
+
+        	<hr>
+        	<br>
+				<section class="animeTables">
+        		<h5>Animační oblast</h5>
+        		           		
+        		<span class="fiveTables">	
+        			<p>Unární spojka NOT</p>
+        			<p>slovy: NEGACE</p>
+        			<p>symbol: &not;</p>
+					<table id="animTableNot" border="1">
+					  <tbody>
+						<tr>
+							<th>&not;					</th>
+							<th>a				</th>
+						</tr>						
+						<tr>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+					  </tbody>
+					</table>
+				 <br>
+				 <br>
+				 <br>
+				 <br>
+				 <button id="animNot">
+					&#x25B6;
+				 </button>					
+				</span>
+        		
+        		<span class="fiveTables">	
+        			<p>Binární spojka AND</p>
+        			<p>slovy: KONJUNKCE</p>
+        			<p>symbol: &and;</p>
+        		  <table id="animTableAnd" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&and;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+				  </table>
+				<br>
+				<button id="animAnd">
+					&#x25B6;
+				</button>
+				</span>
+				
+				<span class="fiveTables">
+					<p>Binární spojka OR</p>
+        			<p>slovy: DISJUNKCE</p>
+        			<p>symbol: &or;</p>
+					<table id="animTableOr" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&or;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+					</table>
+					<br>
+					<button id="animOr">
+						&#x25B6;
+					</button>
+				</span>
+				
+				<span class="fiveTables">
+					<p>Binární spojka &rArr;</p>
+        			<p>slovy: IMPLIKACE</p>
+        			<p>symbol: &rArr;</p>
+					<table id="animTableImpl" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&rArr;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+					</table>
+					<br>
+					<button id="animImpl">
+						&#x25B6;
+					</button>
+				</span>
+				
+				<span class="fiveTables">
+					<p>Binární spojka &hArr;</p>
+        			<p>slovy: EKVIVALENCE</p>
+        			<p>symbol: &hArr;</p>
+					<table id="animTableEque" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&hArr;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+					</table>
+					<br>
+					<button id="animEque">
+						&#x25B6;
+					</button>
+				</span>								 	
+        		</section> 
+
+       			<div class="center">
+       				<button id="buttonAnimSlower">
+						zpomalit
+					</button> 
+				 	rychlost přehrání: <span id="timeControl">2.00 s </span>
+				 	<button id="buttonAnimFaster">
+						zrychlit	
+					</button>	
+				</div>     
+       </div> 		
+		
+		<!--div class="notes"> 	     Legenda barev: <br>
+        		<span class="blue">Modrá</span> - je využita jen k zobrazení, která spojka se používá.
+        		<span class="wrong">Červená</span> - je využita jen k zobrazení 0, a při animaci pokud se to bere v potaz.
+        		<span class="correct">Zelená</span> - je využita jen k zobrazení 1, a při animaci pokud se to bere v potaz.
+		</div-->
+		<hr>
+    	<footer><div class="copyright"><h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Autorem je student MUNI FI Marek Bartošek 2014 * Aktualizováno 16.1.2014 1:30 </h6></div>  		
+    	</footer>   
+    	
+
+	</body>
+</html>

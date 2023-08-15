@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 22.12.2014">
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+   		<link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">            
+
+        <title>Introduction to Logic</title>
+    </head>
+    
+    <body>
+    	<!--real header-->
+    	<header>
+    		<div class="flags">
+    		<a href="../cs/index.html"><img src="../style/img/flags/flag_czech_icon.png" width="30" height="20" alt="cz"></a>
+    		<!--a href="../svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+    		
+        	<header><h1>Animations for teaching logic</h1></header>
+        </header>
+        
+        <!--menu-->
+        <nav>
+        <hr class="menuHr"/>                     
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"  class="active"><a href="index.html">Home</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="basicConnections.html">Basic connections</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="truthTable.html">Truth Table</a>
+							<ul>
+								<li><a href="truthTableTautology.html">- tautology</a></li>
+								<li><a href="truthTableContradiction.html">- contradiction</a></li>
+								<li><a href="truthTableInterpretation.html">- interpretation</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">CNF, DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="resolution.html">Resolutions</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="resolutionTree.html">Resolution-tree</a></li>
+								<li><a href="resolutionLinear.html">Linear resolution</a></li>
+								<li><a href="resolutionLI.html">LI resolution</a></li>
+								<li><a href="resolutionLD.html">LD resolution</a></li>
+								<li><a href="resolutionSLD.html">SLD resolution</a></li>
+								<!--li><a href="resolutionProlog.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+		</table>
+        <hr class="menuHr"/>
+        </nav>
+		
+		<!--real body-->
+        <div class="insertBody">	
+        
+        <!--vysvetlujici text-->
+         	<h4>Home teaching material with animations for better understanding of the knowledge to the subject IB101 Introduction to Logic.</h4>
+
+         		For animations of truth tables are used the numbers 0 and 1 because of space efficiency and clarity : <br>
+         			<li>The number 0 represents false, F.</li>
+         			<li>The number 1 represents true, T.</li>        		
+         		<hr>	 
+         		 <b>1. Basic connections</b> - contain the basic of logic. These include : propositional connectives NOT, AND, OR , implication and equivalence .
+         Without understanding this knowledge is not possible to understand the related materials. <br>
+         		 <br>
+         		 <b>2. Truth table</b> - example of achievable truth table<br>
+         		 	<li>tautology - a special case of the result of a truth table (they contain 1)</li>
+         		 	<li>contradiction - a special case of the result of a truth table (they contain 0)</li> 
+         		 	<li>interpretation - separate chapter of the truth table ( by the user themselves selects the variables and program then generates only one row of the truth table )</li>
+         		 <br>
+
+         		 <b>3. CNF, DNF</b> - transfers from the table to the <b>C</b>onjunctive <b>N</b>ormal <b>F</b>orm (CNF) and <b>D</b>isjunctive <b>N</b>ormal <b>F</b>orm ( DNF )
+         		 <br>
+         		 <br>
+         		 <b>4. Resolutions:</b>
+         		 <li>Resolution-tree - initial resolution - excample of  general resolution tree</li>
+         		 <li>Liner resolution - The first process of refinement resolution</li>
+         		 <li>LI resolution - continuing softening of the linear resolution with other rules</li>
+         		 <li>LD resolution - continuing softening of the LI resolution with other rules</li>
+         		 <li>SLD resolution- continuing softening of the LD resolution with other rules</li>
+         		 <br>
+         </article> 
+
+         <article class="testovaci">
+         		<hr>
+         		<h6>Illustration of formatted truth table and resulting resolution tree.</h6>
+				<div class="twoTables">
+				<div class="animeTables">
+				<table border="1">
+					<tbody>
+						
+						<tr>
+							<th class="variablesColumn">A					</th>
+							<th>A 					</th>
+							<th>&and;					</th>
+							<th>&not;A					</th>
+						</tr>
+						<tr>
+							<td class="variablesColumn">	0				</td>
+							<td><span class="olderVariables">	0	</span>			</td>
+							<td> 	0				</td>
+							<td><span class="olderVariables">	1	</span>					</td>
+						</tr>
+						<tr>
+							<td class="variablesColumn"> 1					</td>
+							<td><span class="olderVariables">	1	</span>			</td>
+							<td>		0			</td>
+							<td><span class="olderVariables">	0	</span>			</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				</div>
+				</div>
+				
+				<div class="twoTables">
+				<div class="animResolution">
+				<table border="1">
+					<tbody>
+						
+						<tr>
+							<td>{<span class="olderVariables">	&not;a	</span>		} 		</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>{<span class="olderVariables">	a			</span>		}		</td>
+						</tr>
+						
+						<tr>
+							<td>					</td>
+							<td><img src="../style/img/leftLine.png" 	>					</td>
+							<td> 					</td>
+							<td><img src="../style/img/rightLine.png"  > 					</td>
+							<td>					</td>
+						</tr>
+						
+						<tr>
+							<td>					</td>
+							<td>					</td>
+							<td><big>&square;</big>			</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				</div>
+				</div>
+         </article>
+        </div>
+        
+        <div class="footer">
+        <footer>
+        	<hr />
+    		<h6>Optimized for Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Made by student MUNI FI Marek Bartošek 2014. * Updated 15.1.2015 01:00</h6> 		
+    	</footer> 
+    	</div>     
+    
+    </body>
+</html>

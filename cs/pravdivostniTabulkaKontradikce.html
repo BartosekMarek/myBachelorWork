@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">           
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--script src="jslibrary/LogicLibrary.js"></script-->
+        <script src="../jslibrary/baseAnime.js"></script>
+        <!--script src="../jslibrary/animeTrueTable.js"></script-->
+        <script src="../jslibrary/trueTableContradiction.js"></script>
+
+        <title>Úvod do logiky-pravdivostni tabulka-kontradikce</title>
+    </head>
+    
+    <body>
+    	<!--real head-->
+    	<header>
+    		<div class="flags">
+    			<a href="../uk/truthTableContradiction.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    			<!--a href="../svk/trueTableContradiction.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+        <h1>Pravdivostní tabulka-kontradikce</h1>
+        </header>
+                
+        <!--menu-->
+        <nav>
+        <hr class="menuHr"/>
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"><a href="index.html">Domů</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="zakladniLogickeSpojky.html">Základní spojky</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>	
+								<li><a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a></li>
+								<li><a class="active" href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a></li>
+								<li><a href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">KNF,DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="rezoluce.html">Rezoluce</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+								<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+								<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+								<li><a href="rezoluceLD.html">LD rezoluce</a></li>
+								<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+								<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+    	</table>
+        <hr class="menuHr"/>
+        </nav>
+        
+        <!--real body-->
+        <div class="insertBody">        
+		<!--vysvetlujici text-->
+
+         <article >
+		 <h5>vysvětlující text k animaci</h5>
+		
+         	<p>Zjištění pravdivostní formule : (¬y ∧ x) ⇔ (x &rArr; y) pro vsechny možné interpretace.	</p>
+         	<!--pouzit kratsi formuli-->  
+         	<br>         		  
+				<p> Kontradikce: všechny výsledné pravdivostní hodnoty jsou rovny nule (0).</p>
+				<p>	 Nejsou zde žádné modely, protože u všech řádků interpretace jsou výsledné hodnoty rovny nule (0). </p> 
+				<br>    	
+         </article> 
+        
+         <article >
+        	<h5>Animační tabulka s animací s poukazem na výslednou kontradikci</h5> 
+        	 
+        	 <section class="animeTables">       	
+        		
+        			<table id="animTable1" border="1">
+        			<colgroup>
+						<col class="variablesColumn" span="2">
+						<col class="variables" span="19">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>x					</th>
+							<th>y					</th>
+							<th>(&not;				</th>
+							<th>y					</th>
+							<th>&and;				</th>
+							<th>x)					</th>
+							<th>⇔ 					</th>
+							<th>(x					</th>
+							<th>&rArr;				</th>
+							<th>y) 					</th>
+							
+						</tr>
+						
+						<tr>
+							<td>0					</td>
+							<td>0					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>	 				</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>1					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>	 				</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>0					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>	 				</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>1					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>	 				</td>
+						</tr>
+					</tbody>
+					</table>
+					<br />
+					
+				<div class="animbuttons">
+					<button id="buttonAnimSlower">
+						zpomalit
+					</button>
+					
+					
+					<button id="buttonAnimPlay">
+							 &#9658;
+					</button>
+					
+					<button id="buttonAnimFaster">
+						zrychlit	
+					</button>
+					rychlost přehrání:<span id="timeControl">2.00 s </span>
+				</div>
+	 	
+        	</section>   
+        	<br>
+        	<!--p>Výsledný sloupec obsahuje pouze 0 neboli nepravdy, a to znamená že celá formule je vždy nepravdivá nezávisle na valuaci = kontradice.</p-->
+         </article>
+        </div>
+		
+	<!--div class="notes">
+		<p>Konvence barev: <span class="red">červená</span> se užívá pro zvýraznění spojek. <span class="blue">Modrá</span> pro zvýraznění proměnných ze kterých rozhoduji,
+        			 a <span class="green">zelená</span> je nakonec výsledná proměnná.</p></div-->
+        <hr />
+    	<footer class="copyright"><h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Autorem je student MUNI FI Marek Bartošek 2014 * Aktualizováno 16.1.2015 11:15 </h6></div></footer>
+            
+    </body>
+</html>

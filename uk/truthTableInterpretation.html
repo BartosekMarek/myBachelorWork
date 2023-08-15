@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">          
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--script src="jslibrary/LogicLibrary.js"></script-->
+        <script src="../jslibrary/baseAnime.js"></script>
+        <!--script src="../jslibrary/animeTrueTable.js"></script-->
+        <script src="../jslibrary/trueTableInterpretation.js"></script>
+
+        <title>Introduction to Logic-truth table-interpretation</title>
+    </head>
+    
+    <body>
+    	<!--real head-->
+   		<header>
+    		<div class="flags">
+    			<a href="../cs/pravdivostniTabulkaInterpretace.html"><img src="../style/img/flags/flag_czech_icon.png" width="30" height="20" alt="cz"></a>
+    			<!--a href="../svk/trueTableInterpretation.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+    		
+        	<h1>Truth table-interpretation</h1>
+        </header>
+        
+        <!--menu-->
+		<nav>
+		<hr class="menuHr"/> 
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first" ><a href="index.html">Home</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a  href="basicConnections.html">Basic connections</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a  href="truthTable.html">Truth Table</a>
+							<ul>
+								<li><a href="truthTableTautology.html">- tautology</a></li>
+								<li><a href="truthTableContradiction.html">- contradiction</a></li>
+								<li><a class="active" href="truthTableInterpretation.html">- interpretation</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">CNF, DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="resolution.html">Resolutions</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="resolutionTree.html">Resolution-tree</a></li>
+								<li><a href="resolutionLinear.html">Linear resolution</a></li>
+								<li><a href="resolutionLI.html">LI resolution</a></li>
+								<li><a href="resolutionLD.html">LD resolution</a></li>
+								<li><a href="resolutionSLD.html">SLD resolution</a></li>
+								<!--li><a href="resolutionProlog.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>            
+    		</tr>
+		</table>
+		<hr class="menuHr"/> 
+		</nav>        
+        
+        <!--real body-->
+        <div class="insertBody">
+        <!--vysvetlujici text-->
+         <div id="lText">
+         <article id="learnText"><h5>text area</h5>
+         	
+         	<p>Let's have a formula (a	&rArr; b) &hArr; (&not; b &or; a) and other interpretation of your choosing :
+         			
+         			<div>
+					I:I(a)=
+					<input id="radioA" type="radio" name="A" value="true" checked="checked"> 1
+					<input type="radio" name="A" value="false"> 0
+					<br>
+					I:I(b)=
+					<input id="radioB" type="radio" name="B" value="true" checked="checked"> 1
+					<input type="radio" name="B" value="false"> 0
+					</div>		
+         	</p>
+         	<!-- nebo lepsi pouzit ze slidu: ((p ∧ q) ⇒ (¬¬q ∨ r)) ⇔ (¬p ⇒ r) -->
+         </article> 
+
+        </div>
+        
+         <article >
+        	<h5>anim area</h5> 
+        	        	
+        	<section class="animeTables">
+        		
+        			<table id="animTable1" border="1">
+        			<colgroup>
+						<col class="variablesColumn" span="2">
+						<col class="variables" span="8">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>b					</th>
+							<th>(a					</th>
+							<th>&rArr;				</th>
+							<th>b)					</th>
+							<th>&hArr;				</th>
+							<th>(&not;				</th>
+							<th>b					</th>
+							<th>&or;				</th>
+							<th>a)					</th>
+						</tr>
+						
+						<tr>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+
+					</tbody>
+					</table>
+					<br />
+					
+					<!--prepinac true nebo false u promennych-->
+
+
+				<div class="animbuttons">
+					<button id="buttonAnimSlower">
+						slower
+					</button>
+					
+					
+					<button id="buttonAnimPlay">
+							 &#9658;
+					</button>
+					
+					<button id="buttonAnimFaster">
+						faster	
+					</button>
+					<!--button id="buttonAnimEnd">
+						na konec
+					</button-->
+					time of play:<span id="timeControl">2.00 s </span>
+				</div>
+				 	
+        	</section>   
+         </article>
+        </div>
+       
+		<!--div class="notes">
+		<p>Konvence barev: <span class="red">červená</span> se užívá pro zvýraznění spojek. <span class="blue">Modrá</span> pro zvýraznění proměnných ze kterých rozhoduji,
+        			 a <span class="green">zelená</span> je nakonec výsledná proměnná.</p>
+       	</div-->
+        <hr />
+    	<footer class="copyright"><h6>Optimized for Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Made by student MUNI FI Marek Bartošek 2014 * Updated 16.1.2015 11:30 </h6></div></footer> 
+    
+    </body>
+</html>

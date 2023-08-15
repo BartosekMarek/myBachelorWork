@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">          
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../jslibrary/baseAnime.js"></script>
+        <script src="../jslibrary/KNFDNF.js"></script>
+        <!--script src="jslibrary/LogicLibrary.js"></script-->
+
+
+        <title>Úvod do logiky-převod do KNF a DNF</title>
+    </head>
+    
+    <body>
+    	<!--real head-->
+   		<header>
+    		<div class="flags">
+    			<a href="../uk/KNFDNF.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    			<!--a href="../svk/trueTableInterpretation.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+    		
+        	<h1>Převod do KNF a DNF pomocí tabulky</h1>
+        </header>
+        
+        <!--menu-->
+		<nav>
+		<hr class="menuHr"/> 
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"><a href="index.html">Domů</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="zakladniLogickeSpojky.html">Základní spojky</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>	
+								<li><a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a></li>
+								<li><a href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a></li>
+								<li><a href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a class="active" href="KNFDNF.html">KNF,DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="rezoluce.html">Rezoluce</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+								<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+								<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+								<li><a href="rezoluceLD.html">LD rezoluce</a></li>
+								<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+								<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+		</table>
+		<hr class="menuHr"/> 
+		</nav>        
+        
+        <!--real body-->
+        <div class="insertBody">
+        <!--vysvetlujici text-->
+         <div id="lText">
+         <article id="learnText"><h5>vysvětlující text k animaci</h5>
+         	
+         	<p> Určete formuli reprezentující následující pravdivostní funkci:         	</p>
+
+         </article> 
+
+        </div>
+        
+         <article >
+        	<h5>Animační tabulka s přepínači proměnných</h5> 
+        	        	
+        	<section class="animeTables"><!--pak zmenit jmeno tridy a vytvorit pro nej styl-->
+        			<br>
+        			<p>Konjunktivní normální forma:</p>
+        			
+        			<table id="animTable2" border="1">
+        			<colgroup>
+						<col class="variablesColumn" span="3">
+						<col class="variableInput" span="1">
+						<col class="variablesWider" span="1">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>p					</th>
+							<th>q					</th>
+							<th>r					</th>
+							<th>&fnof; (p,q,r)		</th>
+							<th>K<sub>i</sub>					</th>
+						</tr>
+						
+						<tr>
+							<td>0					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+
+					</tbody>
+					</table>
+					<br>
+					<p>Pro konjuktivní normální formu hledáme 1 neboli pravda ve sloupci f (p,q,r)</p>
+					<p>Poté kontrolujeme v konkrétním řádku, jakou hodnotu mají proměnné, pokud je 1, tak jen opíšeme, pokud 0, tak musíme přidat negaci. Abychom transformovali z 0 na 1. </p>
+					<p>Ve výsledném sloupci vidíme Konjunktivní Normální Formu(KNF). Z KNF se tvoří UDNF.</p>
+					<p>Úplná disjunktivní normální forma(UDNF): <span id="resultUNDF2"> </span></p>
+				 	<br>
+				 
+				 	<button id="buttonAnimPlay2">
+						<span id="timeControl2">2.00 s </span> &#9658;
+					</button>
+				 
+				 	<br>
+				 
+        			<p>Disjunktivní normální forma:</p>
+        			
+        			<table id="animTable3" border="1">
+        			<colgroup>
+						<col class="variablesColumn" span="3">
+						<col class="variableInput" span="1">
+						<col class="variablesWider" span="1">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>p					</th>
+							<th>q					</th>
+							<th>r					</th>
+							<th>&fnof; (p,q,r)		</th>
+							<th>D<sub>i</sub>					</th>
+						</tr>
+						
+						<tr>
+							<td>0					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>0					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>1					</td>
+							<td>0					</td>
+							<td>0					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>1					</td>
+							<td>					</td>
+						</tr>
+
+					</tbody>
+					</table>
+					<br>
+					<p>Pro disjuktivní normální formu hledáme 0 neboli lež ve sloupci f (p,q,r)</p>
+					<p>Poté pak kontrolujeme v konkrétním řádku, jakou hodnotu mají proměnné, pokud je 0, tak jen opíšeme, pokud 1, tak musíme přidat negaci. Abychom transformovali z 1 na 0. </p>
+					<p>Ve výsledném sloupci vidíme Disjunktivní Normální Formu (DNF). Z DNF se tvoří UKNF.</p>
+					<p>Z DNF se tvoří UKNF</p>
+					<p>Úplná konjunktivní normální forma (UKNF): <span id="resultUNDF3"> </span></p>
+				 	<br>
+				 	
+				 	<button id="buttonAnimPlay3">
+						<span id="timeControl3">2.00 s </span> &#9658;
+					</button>
+				 	
+				 	<br>
+				 	
+				 	<p>UKNF i UDNF:</p>
+				 	
+				 	<table id="animTable1" border="1">
+        			<colgroup>
+						<col class="variablesColumn" span="2">
+						<col class="variableInput" span="1">
+						<col class="variablesWider" span="2">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>p					</th>
+							<th>q					</th>
+							<th>&fnof; (p,q)		</th>
+							<th>K<sub>i</sub>					</th>
+							<th>D<sub>i</sub>					</th>
+						</tr>
+						
+						<tr>
+							<td>0					</td>
+							<td>0					</td>
+							<td>
+								<input id="radio00" type="radio" name="row00" value="true" checked="checked">	<span id="radio001" >1</span>
+								<input type="radio" name="row00" value="false">									<span id="radio000" > 0	</span>				
+							</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>1					</td>
+							<td>
+								<input id="radio01" type="radio" name="row01" value="true" checked="checked"> 	<span id="radio011" >1</span>
+								<input  type="radio" name="row01" value="false"> 								<span id="radio010" > 0	</span>					
+							</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>0					</td>
+							<td>					
+								<input id="radio10" type="radio" name="row10" value="true" checked="checked"> 	<span id="radio101" >1</span>
+								<input  type="radio" name="row10" value="false"> 								<span id="radio100" > 0	</span>
+							</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>1					</td>
+							<td>
+								<input id="radio11" type="radio" name="row11" value="true" checked="checked"> 	<span id="radio111" >1</span>
+								<input  type="radio" name="row11" value="false"> 								<span id="radio110" > 0	</span>				
+							</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+
+					</tbody>
+					</table>
+					
+				 	<br>
+					
+					<!--button id="buttonAnimSlower">
+						Ɩᐅ 
+					</button-->
+					
+					<button id="buttonAnimPlay">
+						<span id="timeControl">2.00 s </span> &#9658;
+					</button>
+					
+					<!--button id="buttonAnimFaster">
+						ᐅᐅ	
+					</button-->		
+				 	<br>
+				 	<br>
+				 	<p id="resultUDNF">Formule vytvořená v úplné disjunktivní normální formě (UDNF)je: </p>
+				 	<br>
+				 	<p id="resultUKNF">Formule vytvořená v úplné konjunktivní normální formě (UKNF)je: </p>
+				 	
+        	</section>   
+         </article>
+        </div>
+
+
+		<!--div class="notes">
+		<p>Konvence barev: <span class="red">červená</span> vytvoření formy na základě 0. A <span class="green">zelená</span> vytvoření formy na základě 1.</p>
+       	</div-->
+        <hr />
+    	<footer class="copyright">
+    		<!--h6>poznámka: vyladit kód javascript</h6-->
+    		<h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * autorem je student MUNI FI Marek Bartošek 2014 * aktualizovano 16.1.2015 13:00</h6></footer>          
+    
+    </body>
+</html>

@@ -1,0 +1,298 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d8cf46a, pid=7068, tid=5092
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) Client VM (19.1-b02 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xdf46a]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x34226800):  VMThread [stack: 0x343f0000,0x344f0000] [id=5092]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x002f0064
+
+Registers:
+EAX=0x0f2701fc, EBX=0x241bab10, ECX=0x241bab18, EDX=0x00000000
+ESP=0x344ef904, EBP=0x344ef91c, ESI=0x002f0064, EDI=0x0f2701f8
+EIP=0x6d8cf46a, EFLAGS=0x00010202
+
+Register to memory mapping:
+
+EAX=0x0f2701fc
+java.util.jar.Attributes 
+ - klass: 'java/util/jar/Attributes'
+
+EBX=0x241bab10
+{instance class} 
+ - klass: {other class}
+
+ECX=0x241bab18
+java.lang.Class 
+ - klass: 'java/lang/Class'
+
+EDX=0x00000000
+0x00000000 is pointing to unknown location
+
+ESP=0x344ef904
+0x344ef904 is pointing to unknown location
+
+EBP=0x344ef91c
+0x344ef91c is pointing to unknown location
+
+ESI=0x002f0064
+0x002f0064 is pointing to unknown location
+
+EDI=0x0f2701f8
+java.util.jar.Attributes 
+ - klass: 'java/util/jar/Attributes'
+
+
+Top of Stack: (sp=0x344ef904)
+0x344ef904:   0f00a850 00000000 00000003 241bab18
+0x344ef914:   0f2701fc 00000003 344ef93c 6d94e393
+0x344ef924:   0f2701f0 6da5003c 240372d8 0045ed38
+0x344ef934:   00000003 344ef948 344ef948 6d94e722
+0x344ef944:   6da5003c 344ef95c 6d9d83e4 6da69634
+0x344ef954:   6da5003c 0045ed38 344ef978 6d996d89
+0x344ef964:   6da5003c 00000000 6da5003c 6da5003c
+0x344ef974:   0045ed38 344ef9b8 6d8ba430 00000001 
+
+Instructions: (pc=0x6d8cf46a)
+0x6d8cf45a:   0f 83 9f 00 00 00 8b 37 85 f6 0f 84 87 00 00 00
+0x6d8cf46a:   8b 0e 83 e1 03 80 f9 03 74 7d 8b 06 c7 45 fc 03 
+
+
+Stack: [0x343f0000,0x344f0000],  sp=0x344ef904,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xdf46a]
+V  [jvm.dll+0x15e393]
+V  [jvm.dll+0x15e722]
+V  [jvm.dll+0x1e83e4]
+V  [jvm.dll+0x1a6d89]
+V  [jvm.dll+0xca430]
+V  [jvm.dll+0xcaca0]
+V  [jvm.dll+0xcb150]
+V  [jvm.dll+0xcf1ba]
+V  [jvm.dll+0x1de8a2]
+V  [jvm.dll+0xc9e88]
+V  [jvm.dll+0xca281]
+V  [jvm.dll+0x1fa95d]
+V  [jvm.dll+0x1fd903]
+V  [jvm.dll+0x1fcbde]
+V  [jvm.dll+0x1fcf00]
+V  [jvm.dll+0x1fd302]
+V  [jvm.dll+0x18317c]
+C  [MSVCR71.dll+0x9565]
+C  [KERNEL32.DLL+0x1919f]
+C  [ntdll.dll+0x50bbb]
+C  [ntdll.dll+0x50b91]
+
+VM_Operation (0x36fbf88c): GenCollectFull, mode: safepoint, requested by thread 0x38bf8000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x38bf8800 JavaThread "Worker-90" [_thread_blocked, id=4812, stack(0x3a520000,0x3a620000)]
+  0x38bf8000 JavaThread "Worker-88" [_thread_blocked, id=3732, stack(0x36ec0000,0x36fc0000)]
+  0x38bf9400 JavaThread "Worker-87" [_thread_blocked, id=8608, stack(0x37090000,0x37190000)]
+  0x35ab1000 JavaThread "com.aptana.editor.common.text.reconciler.CommonReconciler" daemon [_thread_blocked, id=7640, stack(0x3ea10000,0x3eb10000)]
+  0x38bf9800 JavaThread "com.aptana.editor.common.text.reconciler.CommonReconciler" daemon [_thread_blocked, id=8960, stack(0x389b0000,0x38ab0000)]
+  0x35ab4000 JavaThread "com.aptana.editor.common.text.reconciler.CommonReconciler" daemon [_thread_blocked, id=8376, stack(0x387b0000,0x388b0000)]
+  0x35ab3400 JavaThread "com.aptana.editor.common.text.reconciler.CommonReconciler" daemon [_thread_blocked, id=5748, stack(0x36bf0000,0x36cf0000)]
+  0x38bf8c00 JavaThread "Thread-22" [_thread_blocked, id=7944, stack(0x369f0000,0x36af0000)]
+  0x3913c000 JavaThread "[ThreadPool Manager] - Idle Thread" daemon [_thread_blocked, id=9212, stack(0x367f0000,0x368f0000)]
+  0x3913dc00 JavaThread "I/O dispatcher 2" daemon [_thread_in_native, id=8984, stack(0x3dcd0000,0x3ddd0000)]
+  0x3913f000 JavaThread "I/O dispatcher 1" daemon [_thread_in_native, id=5512, stack(0x3dbd0000,0x3dcd0000)]
+  0x3913e400 JavaThread "Thread-15" daemon [_thread_in_native, id=6812, stack(0x3dad0000,0x3dbd0000)]
+  0x3913b800 JavaThread "PHP Debugger Daemon Thread  - Port: 9000" daemon [_thread_in_native, id=4192, stack(0x3d9d0000,0x3dad0000)]
+  0x38bfac00 JavaThread "PHP Debugger Daemon Thread  - Port: 10000" daemon [_thread_in_native, id=2280, stack(0x3d8d0000,0x3d9d0000)]
+  0x38bfb000 JavaThread "MultiThreadedHttpConnectionManager cleanup" daemon [_thread_blocked, id=8600, stack(0x3c4c0000,0x3c5c0000)]
+  0x38bfc400 JavaThread "Swing-Shell" daemon [_thread_blocked, id=6056, stack(0x3b800000,0x3b900000)]
+  0x38bfbc00 JavaThread "AWT-Windows" daemon [_thread_in_native, id=4056, stack(0x3bbc0000,0x3bcc0000)]
+  0x38bfdc00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4308, stack(0x3b940000,0x3ba40000)]
+  0x38bf7000 JavaThread "Provisioning Event Dispatcher" daemon [_thread_blocked, id=1076, stack(0x3b570000,0x3b670000)]
+  0x38bfa400 JavaThread "com.aptana.editor.common.text.reconciler.CommonReconciler" daemon [_thread_blocked, id=4928, stack(0x3b330000,0x3b430000)]
+  0x38bf6400 JavaThread "CommandLineArgsServer" [_thread_in_native, id=760, stack(0x3b0f0000,0x3b1f0000)]
+  0x35ab2c00 JavaThread "Thread-3" daemon [_thread_blocked, id=8580, stack(0x399f0000,0x39af0000)]
+  0x35ab4400 JavaThread "Bundle File Closer" daemon [_thread_blocked, id=3448, stack(0x397c0000,0x398c0000)]
+  0x34e9a800 JavaThread "Worker-JM" [_thread_blocked, id=8588, stack(0x35ce0000,0x35de0000)]
+  0x34f03c00 JavaThread "[Timer] - Main Queue Handler" daemon [_thread_blocked, id=8440, stack(0x356b0000,0x357b0000)]
+  0x34e92400 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=8380, stack(0x35430000,0x35530000)]
+  0x34ea3800 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=8620, stack(0x352f0000,0x353f0000)]
+  0x34e18400 JavaThread "State Data Manager" daemon [_thread_blocked, id=8240, stack(0x351b0000,0x352b0000)]
+  0x34e89000 JavaThread "Framework Active Thread" [_thread_blocked, id=4700, stack(0x35070000,0x35170000)]
+  0x3424e000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5688, stack(0x34b70000,0x34c70000)]
+  0x3424c400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=7560, stack(0x34a30000,0x34b30000)]
+  0x3424ac00 JavaThread "Attach Listener" daemon [_thread_blocked, id=6344, stack(0x348f0000,0x349f0000)]
+  0x34247c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6064, stack(0x347b0000,0x348b0000)]
+  0x3422bc00 JavaThread "Finalizer" daemon [_thread_blocked, id=7404, stack(0x34670000,0x34770000)]
+  0x3422a000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8932, stack(0x34530000,0x34630000)]
+  0x00459400 JavaThread "main" [_thread_blocked, id=6888, stack(0x00090000,0x00190000)]
+
+Other Threads:
+=>0x34226800 VMThread [stack: 0x343f0000,0x344f0000] [id=5092]
+  0x34259c00 WatcherThread [stack: 0x34cb0000,0x34db0000] [id=8252]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x004573b8] Threads_lock - owner thread: 0x34226800
+[0x00458658] Heap_lock - owner thread: 0x38bf8000
+
+Heap
+ def new generation   total 27648K, used 659K [0x04020000, 0x05e10000, 0x0eac0000)
+  eden space 24640K,   2% used [0x04020000, 0x040c4c88, 0x05830000)
+  from space 3008K,   0% used [0x05830000, 0x05830000, 0x05b20000)
+  to   space 3008K,   0% used [0x05b20000, 0x05b20000, 0x05e10000)
+ tenured generation   total 61244K, used 34993K [0x0eac0000, 0x1268f000, 0x24020000)
+   the space 61244K,  57% used [0x0eac0000, 0x10cec5c0, 0x10cec600, 0x1268f000)
+ compacting perm gen  total 58112K, used 57920K [0x24020000, 0x278e0000, 0x34020000)
+   the space 58112K,  99% used [0x24020000, 0x278b0150, 0x278b0200, 0x278e0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\AptanaStudio3.exe
+0x77050000 - 0x771b7000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75260000 - 0x753a0000 	C:\Windows\SYSTEM32\KERNEL32.DLL
+0x74f00000 - 0x74fd0000 	C:\Windows\SYSTEM32\KERNELBASE.dll
+0x767b0000 - 0x768fc000 	C:\Windows\SYSTEM32\USER32.dll
+0x76e70000 - 0x76ef6000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.9600.16384_none_7c55c866aa0c3ff0\COMCTL32.dll
+0x76db0000 - 0x76e6e000 	C:\Windows\SYSTEM32\MSVCRT.dll
+0x75000000 - 0x75107000 	C:\Windows\SYSTEM32\GDI32.dll
+0x74b20000 - 0x74b98000 	C:\Windows\SYSTEM32\ADVAPI32.dll
+0x753e0000 - 0x7541e000 	C:\Windows\SYSTEM32\sechost.dll
+0x74a70000 - 0x74b20000 	C:\Windows\SYSTEM32\RPCRT4.dll
+0x74a50000 - 0x74a6d000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x74a40000 - 0x74a49000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x749e0000 - 0x74a32000 	C:\Windows\SYSTEM32\bcryptPrimitives.dll
+0x76730000 - 0x76755000 	C:\Windows\system32\IMM32.DLL
+0x74c50000 - 0x74d47000 	C:\Windows\SYSTEM32\MSCTF.dll
+0x72000000 - 0x7200d000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\plugins\org.eclipse.equinox.launcher.win32.win32.x86_1.1.100.v20110502\eclipse_1406.dll
+0x73780000 - 0x73788000 	C:\Windows\SYSTEM32\VERSION.dll
+0x73f20000 - 0x73ffb000 	C:\Windows\system32\uxtheme.dll
+0x75110000 - 0x7525e000 	C:\Windows\SYSTEM32\combase.dll
+0x6d7f0000 - 0x6da96000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\client\jvm.dll
+0x74370000 - 0x74390000 	C:\Windows\SYSTEM32\WINMM.dll
+0x7c340000 - 0x7c396000 	C:\Windows\SYSTEM32\MSVCR71.dll
+0x740a0000 - 0x740c0000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x76760000 - 0x7679a000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x74080000 - 0x7409f000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x6d030000 - 0x6d0c9000 	C:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\java.dll
+0x6d280000 - 0x6d288000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\hpi.dll
+0x76910000 - 0x76916000 	C:\Windows\SYSTEM32\PSAPI.DLL
+0x6d7e0000 - 0x6d7ef000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\zip.dll
+0x73560000 - 0x73578000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x6e870000 - 0x6e89f000 	C:\Windows\system32\rsaenh.dll
+0x6e850000 - 0x6e86d000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x74720000 - 0x74739000 	C:\Windows\SYSTEM32\USERENV.dll
+0x74300000 - 0x7430e000 	C:\Windows\SYSTEM32\profapi.dll
+0x6d600000 - 0x6d613000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\net.dll
+0x74bb0000 - 0x74bfd000 	C:\Windows\SYSTEM32\WS2_32.dll
+0x767a0000 - 0x767a7000 	C:\Windows\SYSTEM32\NSI.dll
+0x73df0000 - 0x73e35000 	C:\Windows\system32\mswsock.dll
+0x73470000 - 0x73480000 	C:\Windows\system32\napinsp.dll
+0x6dde0000 - 0x6ddf4000 	C:\Windows\system32\pnrpnsp.dll
+0x73800000 - 0x73814000 	C:\Windows\system32\NLAapi.dll
+0x73d40000 - 0x73dbc000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x6d1a0000 - 0x6d1a9000 	C:\Windows\System32\winrnr.dll
+0x73be0000 - 0x73be7000 	C:\Windows\System32\rasadhlp.dll
+0x73dd0000 - 0x73dee000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x73dc0000 - 0x73dc8000 	C:\Windows\SYSTEM32\WINNSI.DLL
+0x73b90000 - 0x73bd4000 	C:\Windows\System32\fwpuclnt.dll
+0x74df0000 - 0x74efc000 	C:\Windows\system32\ole32.dll
+0x74920000 - 0x74929000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x6d620000 - 0x6d629000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\nio.dll
+0x35de0000 - 0x35e4e000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\249\1\.cp\swt-win32-3740.dll
+0x74d50000 - 0x74de5000 	C:\Windows\SYSTEM32\OLEAUT32.dll
+0x766a0000 - 0x7672a000 	C:\Windows\SYSTEM32\comdlg32.dll
+0x74310000 - 0x7436e000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x739a0000 - 0x73b86000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17031_none_a9efdb8b01377ea7\COMCTL32.dll
+0x754e0000 - 0x76697000 	C:\Windows\SYSTEM32\SHELL32.dll
+0x73980000 - 0x73994000 	C:\Windows\SYSTEM32\USP10.dll
+0x743a0000 - 0x74575000 	C:\Windows\SYSTEM32\WININET.dll
+0x76920000 - 0x76aa8000 	C:\Windows\SYSTEM32\CRYPT32.dll
+0x74c00000 - 0x74c41000 	C:\Windows\SYSTEM32\SHLWAPI.dll
+0x740c0000 - 0x742f2000 	C:\Windows\SYSTEM32\iertutil.dll
+0x74ba0000 - 0x74bae000 	C:\Windows\SYSTEM32\MSASN1.dll
+0x74000000 - 0x74076000 	C:\Windows\SYSTEM32\SHCORE.DLL
+0x73f00000 - 0x73f18000 	C:\Windows\system32\dwmapi.dll
+0x6e8f0000 - 0x6ea15000 	C:\Windows\SYSTEM32\propsys.dll
+0x76f00000 - 0x76f7d000 	C:\Windows\SYSTEM32\clbcatq.dll
+0x35eb0000 - 0x35ecd000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\249\1\.cp\swt-gdip-win32-3740.dll
+0x74580000 - 0x746cd000 	C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.9600.17227_none_dad9452e5bcb7986\gdiplus.dll
+0x6c9e0000 - 0x6cb4b000 	C:\Windows\SYSTEM32\WindowsCodecs.dll
+0x35ed0000 - 0x35ede000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\160\1\.cp\os\win32\x86\localfile_1_0_0.dll
+0x360c0000 - 0x360c8000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\165\1\.cp\os\win32\x86\win32refresh.dll
+0x746d0000 - 0x74718000 	C:\Windows\SYSTEM32\oleacc.dll
+0x6c780000 - 0x6c9d3000 	C:\Windows\system32\explorerframe.dll
+0x6c700000 - 0x6c776000 	C:\Windows\system32\DUser.dll
+0x6c5b0000 - 0x6c6fb000 	C:\Windows\system32\DUI70.dll
+0x6d130000 - 0x6d15f000 	C:\Windows\system32\mlang.dll
+0x6d190000 - 0x6d19f000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\163\1\.cp\jWinHttp-1.0.0.dll
+0x73e40000 - 0x73ed4000 	C:\Windows\SYSTEM32\WINHTTP.dll
+0x73500000 - 0x73512000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x73450000 - 0x73463000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x74390000 - 0x74396000 	C:\Windows\SYSTEM32\msimg32.dll
+0x364b0000 - 0x364bf000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\11\1\.cp\os\win32\x86\core_3_0_0.dll
+0x67540000 - 0x67554000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\configuration\org.eclipse.osgi\bundles\61\1\.cp\os\win32\x86\jnotify.dll
+0x6d780000 - 0x6d788000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\sunmscapi.dll
+0x3b670000 - 0x3b7ba000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\awt.dll
+0x6c350000 - 0x6c5a9000 	C:\Windows\AppPatch\AcGenral.DLL
+0x738a0000 - 0x738b2000 	C:\Windows\SYSTEM32\samcli.dll
+0x6c320000 - 0x6c335000 	C:\Windows\SYSTEM32\MSACM32.dll
+0x73bf0000 - 0x73d3a000 	C:\Windows\SYSTEM32\urlmon.dll
+0x6c300000 - 0x6c314000 	C:\Windows\SYSTEM32\MPR.dll
+0x6d230000 - 0x6d27f000 	C:\Users\Marek\AppData\Local\Aptana Studio 3\jre\bin\fontmanager.dll
+0x6c160000 - 0x6c2f9000 	C:\Windows\system32\NetworkExplorer.dll
+0x76c00000 - 0x76dad000 	C:\Windows\SYSTEM32\SETUPAPI.dll
+0x6a870000 - 0x6a8eb000 	C:\Windows\SYSTEM32\sxs.dll
+0x689e0000 - 0x69624000 	C:\Windows\SYSTEM32\ieframe.dll
+0x3f1f0000 - 0x404cf000 	C:\Windows\SYSTEM32\mshtml.dll
+0x73ef0000 - 0x73ef9000 	C:\Windows\SYSTEM32\Secur32.dll
+0x6b230000 - 0x6b23c000 	C:\Windows\system32\msimtf.dll
+0x6a7a0000 - 0x6a7d1000 	C:\Windows\SYSTEM32\msls31.dll
+0x6ab70000 - 0x6af35000 	C:\Windows\SYSTEM32\d2d1.dll
+0x6ea60000 - 0x6ebd5000 	C:\Windows\SYSTEM32\DWrite.dll
+0x6e7e0000 - 0x6e842000 	C:\Windows\SYSTEM32\dxgi.dll
+0x6e630000 - 0x6e7df000 	C:\Windows\SYSTEM32\d3d11.dll
+0x73740000 - 0x7377e000 	C:\Windows\SYSTEM32\powrprof.dll
+0x688f0000 - 0x689d4000 	C:\Windows\SYSTEM32\uiautomationcore.dll
+0x6a5a0000 - 0x6a79d000 	C:\Windows\SYSTEM32\d3d10warp.dll
+0x68440000 - 0x68543000 	C:\Windows\SYSTEM32\actxprxy.dll
+
+VM Arguments:
+jvm_args: -Xms40m -Xmx512m -Declipse.p2.unsignedPolicy=allow -Declipse.log.size.max=10000 -Declipse.log.backup.max=5 -Djava.awt.headless=true -XX:MaxPermSize=256m 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:/Users/Marek/AppData/Local/Aptana Studio 3/jre/bin/client;C:/Users/Marek/AppData/Local/Aptana Studio 3/jre/bin;C:/Users/Marek/AppData/Local/Aptana Studio 3/jre/lib/i386;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\CineForm\Tools;C:\Program Files (x86)\GoPro\Tools;C:\Users\Marek\Desktop\aktualniWebOpraveny\cs;
+USERNAME=Marek
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 18 Model 1 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.2 Build 9200 
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 18 model 1 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnow, 3dnowext, lzcnt, sse4a
+
+Memory: 4k page, physical 8385780k(6873920k free), swap 16774388k(13222084k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.1-b02) for windows-x86 JRE (1.6.0_24-b07), built on Feb  2 2011 17:44:41 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sat Jan 17 12:12:30 2015
+elapsed time: 71697 seconds
+

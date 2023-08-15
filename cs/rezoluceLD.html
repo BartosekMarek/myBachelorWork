@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">  
+        		
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../jslibrary/baseAnime.js"></script>
+        <script src="../jslibrary/animeRezolution.js"></script>
+        <script src="../jslibrary/resolutionLD.js"></script>
+        
+		<title>Úvod do logiky-Rezoluce-LD</title>
+	</head>
+
+	<body>
+		<!--real head-->
+		<header>
+    		<div class="flags">
+    			<a href="../uk/resolutionLD.html"><img src="../style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    			<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+		
+			<h1>LD rezoluce</h1>
+		</header>
+		
+		<!--menu-->
+		<nav>
+        <hr class="menuHr"/>               
+			<table>
+				<tr>
+					<td>        		
+   	     			<ul class="menu">		
+							<li class="first"><a href="index.html">Domů</a></li>
+						</ul>
+					</td>
+					<td>        		
+	   	     			<ul class="menu">	
+							<li><a href="zakladniLogickeSpojky.html">Základní spojky</a></li>
+						</ul>
+					</td>
+					<td>        		
+   		     			<ul class="menu">
+							<li><a href="pravdivostniTabulka.html">Pravdivostní tabulka</a>
+								<ul>	
+									<li><a href="pravdivostniTabulkaTautologie.html">PT-tautologie</a></li>
+									<li><a href="pravdivostniTabulkaKontradikce.html">PT-kontradikce</a></li>
+									<li><a href="pravdivostniTabulkaInterpretace.html">PT-interpretace</a></li>
+								</ul>
+							</li>
+						</ul>
+					</td>
+					<td>        		
+        				<ul class="menu">	
+							<li><a href="KNFDNF.html">KNF,DNF</a></li>
+						</ul>
+					</td>
+					<td>        		
+        				<ul class="menu">								
+							<li><a href="rezoluce.html">Rezoluce</a>
+								<ul id="podmenu2" class="clearfix">
+									<li><a href="rezoluceStromy.html">Rezoluce-stromy</a></li>
+									<li><a href="linearniRezoluce.html">Lineární rezoluce</a></li>
+									<li><a href="rezoluceLI.html">LI rezoluce</a></li>
+									<li><a class="active" href="rezoluceLD.html">LD rezoluce</a></li>
+									<li><a href="rezoluceSLD.html">SLD rezoluce</a></li>
+									<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+								</ul>
+							</li>	
+						</ul>
+     			</td>          
+    			</tr>
+			</table>
+        <hr class="menuHr"/>
+        </nav>
+
+        <!--real body-->
+        <div class="insertBody">
+        		<p>Vyvraťte následující množinu formulí:<span>
+					S = {(q ∧ r) ⇒ p, q ⇒ (r ∧ ¬ p), ¬ ( ¬ r ∨ ¬ ( r ⇒ p)), p ⇒ q}</span>
+					pomocí LD rezoluce.<br> 
+					- LD obsahuje stejná pravidla jako LI, navíc přidává podmínku:<br>
+					- je třeba mít uspořádáné hornovy klauzule (první literál je vždy pozitivní a další literály v kaluzuli už jsou negativní)<br>
+					- je třeba dodržovat pořadí umístění klauzulí</p>
+				<br>
+				<div class="animbuttons">
+
+					<button id="buttonAnimSlower">
+						zpomalit
+					</button> 
+					<button id="buttonAnimPlay">
+						&#9658; 
+					</button>
+					<button id="buttonAnimFaster">
+						zrychlit	
+					</button>
+					<button id="buttonAnimReload">
+						obnovení<!--&#x25FC;--> 					
+					</button>
+					<!--button id="buttonAnimEnd">
+						na konec
+					</button-->		
+					rychlost přehrání: <span id="timeControl">2.00 s </span>
+				</div>					
+				<br>
+				
+					<table class="resolutionFormula">
+						<tr>
+							<td>[p,¬q,¬r],</td><td>[r,¬q],</td><td>[¬q,¬p],</td><td>[r],</td><td>[p,¬r],</td><td>[q,¬p]</td>
+						</tr>
+					</table>
+				<br>	
+				<div class="animResolution">
+				<table id="animLD" border="1">
+					<tbody align="center">
+					<tr>
+						<td>[<span>¬q</span>,<span class="olderVariables">¬p</span>]</td>
+						<td> </td><td>[<span class="olderVariables">p</span>,<span>¬r</span>]</td>
+					</tr>
+					<tr>
+						<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+					</tr> 
+					<tr>
+						<td>[<span>¬q</span>,<span class="olderVariables">¬r</span>]</td><td> </td><td>[<span class="olderVariables">r</span>]</td>
+					</tr>
+					<tr>
+						<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+					</tr>
+					<tr>
+						<td>[<span class="olderVariables">¬q</span>]</td><td> </td><td>[<span class="olderVariables">q</span>,<span>¬p</span>]</td>
+					</tr>
+					<tr>
+						<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+					</tr>
+					<tr>
+						<td>[<span class="olderVariables">¬p</span>]</td><td> </td><td>[<span class="olderVariables">p</span>,<span>¬r</span>]</td>
+					</tr>
+					<tr>
+						<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+					</tr>
+					<tr>
+						<td>[<span class="olderVariables">¬r</span>]</td><td> </td><td>[<span class="olderVariables">r</span>]</td>
+					</tr>
+					<tr>
+						<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+					</tr>
+					<tr>
+						<td><span>□</span></td><td> </td><td> </td>
+					</tr>
+					</tbody>
+				</table>
+				</div>
+				<br />
+					
+		</div>
+	
+		<hr>	
+			
+		<!--footer-->
+		<!--div id="notes"><hr /><h6>poznámka: zatím to není barvené, zatím je důraz na funkčnost, pokud je dobrá, poté se zapracuje na zvýraznění a barvení</h6></div-->
+    	<footer id="copyright"><h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. * autorem je student MUNI FI Marek Bartošek 2014 * aktualizovano 17.1.2015 14:00</h6></footer> 
+		
+	</body>
+</html>

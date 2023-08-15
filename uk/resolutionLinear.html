@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+
+		<meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- for the most new compile in webwiewers-->
+
+		<link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="../jslibrary/baseAnime.js"></script>
+		<script src="../jslibrary/animeRezolution.js"></script>
+		<script src="../jslibrary/resolutionLinear.js"></script>
+
+		<title>Introduction to Logic-Resolution-linear</title>
+	</head>
+
+	<body>
+		<!--real head-->
+		<header>
+			<div class="flags">
+				<a href="../cs/linearniRezoluce.html"><img src="../style/img/flags/flag_czech_icon.png" width="30" height="20" alt="cz"></a>
+				<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+			</div>
+
+			<h1>Linear resolution</h1>
+		</header>
+
+		<!--menu-->
+		<nav>
+			<hr class="menuHr"/>
+			<table>
+		<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first" ><a href="index.html">Home</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a  href="basicConnections.html">Basic connections</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a  href="truthTable.html">Truth Table</a>
+							<ul>
+								<li><a href="truthTableTautology.html">- tautology</a></li>
+								<li><a href="truthTableContradiction.html">- contradiction</a></li>
+								<li><a href="truthTableInterpretation.html">- interpretation</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">CNF, DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="resolution.html">Resolutions</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="resolutionTree.html">Resolution-tree</a></li>
+								<li><a class="active" href="resolutionLinear.html">Linear resolution</a></li>
+								<li><a href="resolutionLI.html">LI resolution</a></li>
+								<li><a href="resolutionLD.html">LD resolution</a></li>
+								<li><a href="resolutionSLD.html">SLD resolution</a></li>
+								<!--li><a href="resolutionProlog.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>            
+    		</tr>
+			</table>
+			<hr class="menuHr"/>
+		</nav>
+
+		<!--real body-->
+		<div class="insertBody">
+			<p>
+				Disproof following set of formulas:<span>
+				S = {(q ∧ r) ⇒ p, q ⇒ (r ∧ ¬ p), ¬ ( ¬ r ∨ ¬ ( r ⇒ p)), p ⇒ q}</span>
+				using linear resolution.<br>
+				- Formulas need to be converted to clauses: see below<br>
+				- (The first refinement of the general resolutions - contains the only one rule - resole only one branch)
+				</p>
+				<br>
+				<div class="animbuttons">
+
+					<button id="buttonAnimSlower">
+						slower
+					</button>
+					<button id="buttonAnimPlay">
+						&#9658;
+					</button>					
+
+					<button id="buttonAnimFaster">
+						faster
+					</button>
+					
+					<button id="buttonAnimReload">
+						reload <!--&#x25FC;-->
+					</button>
+					<button id="buttonAnimEnd">
+						end
+					</button>
+					time of play: <span id="timeControl">2.00 s </span>
+				</div>
+				<br>
+
+				<table class="resolutionFormula">
+					<tr>
+						<td>{p,¬q,¬r},</td><td>{r,¬q},</td><td>{¬q,¬p},</td><td>{r},</td><td>{¬r,p},</td><td>{¬p,q}</td>
+					</tr>
+				</table>
+				<br>
+				<div class="animResolution">
+					<table id="animLin" border="1">
+						<tbody align="center">
+							<!--span>viditelné jen pro nefunkčnost JavaSciptu</span-->
+							<tr>
+								<td>{<span class="olderVariables">r</span>}</td>
+								<td> </td><td>{<span class="olderVariables">¬r</span>,<span>p</span>}</td>
+							</tr>
+							<tr>
+								<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+							</tr> 
+							<tr>
+								<td>{<span class="olderVariables">p</span>}</td><td> </td><td>{<span>¬q</span>,<span class="olderVariables">¬p</span>}</td>
+							</tr>
+							<tr>
+								<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+							</tr>
+							<tr>
+								<td>{<span class="olderVariables">¬q</span>}</td><td> </td><td>{<span>¬p</span>,<span class="olderVariables">q</span>}</td>
+							</tr>
+							<tr>
+								<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+							</tr>
+							<tr>
+								<td>{<span class="olderVariables">¬p</span>}</td><td> </td><td>{<span class="olderVariables">p</span>}</td>
+							</tr>
+							<tr>
+								<td><img src="../style/img/centreLine.png"></td><td><img src="../style/img/rightLine.png"></td><td> </td>
+							</tr>
+							<tr>
+								<td><span>□</span></td><td> </td><td> </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br />
+		</div>
+		
+		<hr />
+		<footer class="copyright">
+			<h6>Optimized for Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Made by student MUNI FI Marek Bartošek 2014 * Updated 17.1.2015 14:00</h6>
+		</footer>
+
+	</body>
+</html>

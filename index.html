@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+    	<meta http-equiv="refresh" content="0;url=cs/index.html"> <!--presmerovani primo na cesky index-- divert on czech index -->
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 22.12.2014">
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+   		<link rel="stylesheet" type="text/css" href="style/stylopisLogika.css">            
+
+        <title>Úvod do logiky</title>
+    </head>
+    
+    <body>
+    	<!--real header-->
+    	<header>
+    		<div class="flags">
+    		<a href="uk/index.html"><img src="style/img/flags/flag_uk_icon.png" width="30" height="20" alt="en"></a>
+    		<!--a href="svk/index.html"><img src="style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+    		
+        	<header><h1>Výukový animační materiál k logice</h1></header>
+        </header>
+        
+        <!--menu-->
+        <nav>
+        <hr class="menuHr"/>                     
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first"  class="active"><a href="cs/index.html">Domů</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="cs/zakladniLogickeSpojky.html">Základní spojky</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="cs/pravdivostniTabulka.html">Pravdivostní tabulka</a>
+							<ul>
+								<li><a href="cs/pravdivostniTabulkaTautologie.html">- tautologie</a></li>
+								<li><a href="cs/pravdivostniTabulkaKontradikce.html">- kontradikce</a></li>
+								<li><a href="cs/pravdivostniTabulkaInterpretace.html">- interpretace</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="cs/KNFDNF.html">KNF, DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="cs/rezoluce.html">Rezoluce</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="cs/rezoluceStromy.html">Rezoluce-stromy</a></li>
+								<li><a href="cs/linearniRezoluce.html">Lineární rezoluce</a></li>
+								<li><a href="cs/rezoluceLI.html">LI rezoluce</a></li>
+								<li><a href="cs/rezoluceLD.html">LD rezoluce</a></li>
+								<li><a href="cs/rezoluceSLD.html">SLD rezoluce</a></li>
+								<!--li><a href="SLDrezoluce.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>           
+    		</tr>
+		</table>
+        <hr class="menuHr"/>
+        </nav>
+		
+		<!--real body-->
+        <div class="insertBody">	
+        
+        <!--vysvetlujici text-->
+         <article><h5>vysvětlující text k animaci</h5>
+         	
+         	<h4>Úvodní stránka výukového materiálu s animacemi pro lepší pochopení látky k předmětu IB101 Úvod do logiky</h4>
+
+         		U animací pravdivostných tabulek se využívají čísla 0 a 1 z důvodu úspornosti místa a přehlednosti: <br>
+         			<li>Číslo 0 představuje nepravdu, lež, false, F.</li>
+         			<li>Číslo 1 představuje pravdu, true, T.</li>        		
+         		<hr>	 
+         		 <b>1. Základní spojky</b> - obsahují základy Logiky. Patří mezi ně: výrokové spojky NOT, AND, OR, implikace a ekvivalence.
+         		 Bez pochopení této látky není možné chápat navazující materiály. <br>
+         		 <br>
+         		 <b>2. Pravdivostní tabulka</b> - ukázka splnitelné pravdivostní tabulky<br>
+         		 	<li>tautologie - speciální případ výsledku pravdivostní tabulky (obsahují jen 1)</li>
+         		 	<li>kontradice - speciální případ výsledku pravdivostní tabulky (obsahují jen 0)</li> 
+         		 	<li>interpretace - samostatná kapitola pravdivostní tabulky (uživatel sám vybere proměnné a tím se vygeneruje jen jeden řádek z pravdivostní tabulky)</li>
+         		 <br>
+
+         		 <b>3. KNF, DNF</b> - převody z tabulky na <b>K</b>onjunktivní <b>N</b>ormální <b>F</b>ormu (KNF) a <b>D</b>isjunktivní <b>N</b>ormální <b>F</b>ormu (DNF)
+         		 <br>
+         		 <br>
+         		 <b>4. Rezoluce:</b>
+         		 <li>Rezoluce-stromy - úvodní rezoluce - ukázka rozvětvenosti obecné rezoluce</li>
+         		 <li>Lineární rezoluce - První postup zjemnění rezoluce</li>
+         		 <li>LI rezoluce - navazující zjemňující rezoluce od lineární s dalšími pravidly</li>
+         		 <li>LD rezoluce - další navazující zjemnňující rezoluce od LI s dalšími pravidly</li>
+         		 <li>SLD rezoluce - poslední navazující zjemňující rezoluce od LD s dalšími pravidly</li>
+         		 <br>
+         </article> 
+
+         <article class="testovaci">
+         		<hr>
+         		<h6>Ukázka naformátované pravdivostní tabulky a výsledného rezolučního stromu.</h6>
+				<div class="twoTables">
+				<div class="animeTables">
+				<table border="1">
+					<tbody>
+						
+						<tr>
+							<th class="variablesColumn">A					</th>
+							<th>A 					</th>
+							<th>&and;					</th>
+							<th>&not;A					</th>
+						</tr>
+						<tr>
+							<td class="variablesColumn">	0				</td>
+							<td><span class="olderVariables">	0	</span>			</td>
+							<td> 	0				</td>
+							<td><span class="olderVariables">	1	</span>					</td>
+						</tr>
+						<tr>
+							<td class="variablesColumn"> 1					</td>
+							<td><span class="olderVariables">	1	</span>			</td>
+							<td>		0			</td>
+							<td><span class="olderVariables">	0	</span>			</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				</div>
+				</div>
+				
+				<div class="twoTables">
+				<div class="animResolution">
+				<table border="1">
+					<tbody>
+						
+						<tr>
+							<td>{<span class="olderVariables">	&not;a	</span>		} 		</td>
+							<td>					</td>
+							<td>					</td>
+							<td>					</td>
+							<td>{<span class="olderVariables">	a			</span>		}		</td>
+						</tr>
+						
+						<tr>
+							<td>					</td>
+							<td><img src="style/img/leftLine.png" 	>					</td>
+							<td> 					</td>
+							<td><img src="style/img/rightLine.png"  > 					</td>
+							<td>					</td>
+						</tr>
+						
+						<tr>
+							<td>					</td>
+							<td>					</td>
+							<td><big>&square;</big>			</td>
+							<td>					</td>
+							<td>					</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				</div>
+				</div>
+         </article>
+        </div>
+        
+        <div class="footer">
+        <footer>
+        	<hr />
+    		<h6>Optimalizován pro Firefox 31.0 , Chrome 37 a Internet Explorer 11. Autorem je student MUNI FI Marek Bartošek 2014. Aktualizováno 15.01.2015 01:00hod</h6> 		 		
+    	</footer> 
+    	</div>     
+    
+    </body>
+</html>

@@ -1,0 +1,356 @@
+/*
+ Centralni stylopis webu Uvod do logiky
+ Autor: Marek Bartosek, 359931@mail.muni.cz
+ * 
+ * ===== Z-index ======
+ * 10 základní styly 
+ * 27 styly převzaté a upravené z původní stránky logiky
+ * 75 styl pro menu-navigaci
+ * 141 styl pro vnitrní tělo stránky
+ * 156 sada layoutů
+ * 196 nastaveni pro animace tabulek
+ * 231 nastaveni pro animace rezoluci
+ * */
+
+
+/*zakladni styly*/
+
+body {
+		/*margin: 0px;/*doporucene pro spravne formatovani divu*/
+		min-width: 1024px; /*sirka stranky bezna pri starych monitorech*/
+		margin: 3em 3em 0em 6em;
+		
+		font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+		background: #FFFFFF url(img/left.gif) repeat-y left;
+}
+
+p {
+		text-align: justify; /*textove formatovani do bloku*/
+		text-indent: 30px; margin: 0px; /*format prvniho radku v odstavci  mezera vertikalni margin-top?*/
+  }
+
+h1,h2,h3,h4,h5,h6 {
+    /* styly nadpisu -tucne, modre*/
+    	font-weight: bold;
+    	color: #3399CC;
+    	padding: 0;
+  }
+
+h5{  	display:none;}
+
+table, td,th {
+	/*vypnuti hranic a rozmeru u tabulek*/
+		margin:0;
+		border: 0;
+		padding: 0;
+
+}
+
+hr {
+        color: #3399CC;
+        background-color: #3399CC;
+        height: 2px;      
+}
+
+.center{
+		clear:both;
+		text-align:center;
+		padding: 3ex;
+}
+
+
+/*styly pro navigaci jazyku*/
+.flags{
+	float: right;
+}
+
+
+/*styly pro navigaci*/
+.menuHr{
+	/*cara u menu - jiny margin*/ 
+        margin: 0px;  
+}
+
+.menu, .menu ul, .menu li li {
+		padding: 0; margin: 0; /*vypnuti ramovani*/
+		list-style-type: none; /*typ odrazek*/
+}
+ 
+.menu ul {
+		position: absolute; 	/*pri zuzenem monitoru zustane seznam pekne pod sebe bez mezery po rozbalovacim menu*/
+		visibility: hidden; 
+}
+
+.menu li {
+		width: 210px;
+		padding: 3px 3px 3px 0; 
+		float: left; 			/*razeni zleva*/
+
+}
+
+.menu a {
+		padding: 2px; 
+		padding-left: 1em;		/*odsazeni o pismeno*/
+	
+		text-decoration: none; 		/*zruseni podtrzeni u odkazu*/	 
+		color: #fff; 				/*barva pisma-bila*/
+		font-weight: bold;
+	
+		background-color: #3399CC;	/*modrá*/
+		display: block; 			/*vybareni do celeho obdelniku*/	 
+}
+
+.menu .first {
+		width: 160px;	
+}
+
+.menu .first a{
+     	width: 120px;
+}
+
+
+.menu ul a:link {
+	/*nenavstivena stranka*/
+		color: #FFFFFF; 
+		border-bottom: none;
+	 	padding-left: 15px;
+	  	_padding-left: 19px;
+}
+
+
+
+.menu ul a:visited {
+	/*navstivena stranka*/
+		color: #F9F6F4;
+	 	border-bottom: none; 
+	 	padding-left: 15px;
+	  	_padding-left: 19px;
+}
+
+.menu ul a:hover , .menu li a:hover{
+		color: #5B5B5B;							/*tmave seda pri najeti mysi*/
+}
+
+.menu li:hover ul, ul.menu li.hover ul { 
+		visibility: visible;					/*zapnuti viditelnosti pri najeti mysi*/
+}
+
+.menu li li {					
+	 	float: none;							/*pro udrzeni spravneho posloupnosti*/
+	 	border: none; 	 
+}
+ 
+.menu li a.active {
+		color: #000000;
+}
+
+/*navrh layoutu pro vnitrni body*/
+.insertBody {
+	/*zruseni dedicnosti predhozich stylu*/
+
+		min-height: 533px; /*600 pro netbooky, 768 pc*/
+		padding: 1.5em 0.5em;
+	
+	/*smartphones:	 
+	 * 320x480 480x800 540x960 1280x720 the most expensive: 1920x1080 (zdroj: http://cs.wikipedia.org/wiki/Rozli%C5%A1en%C3%AD)
+	 * */
+	
+	/*max-width  asi nastaveni maximalni sirky*/
+	/*margin-left: auto; margin-right: auto; /*vycentrovani na stred- same- margin: 0px auto;*/
+	/*position: relative;/*doporučuje pro použití pozicování*/
+}
+
+.insertBody li{
+		margin-left: 1.5em;
+}
+
+.left20{
+		width:20%
+		float:left;
+}
+
+.eightTables { 	
+	/* pro zobrazeni 5 veci vedle sebe */
+		width: 10%;
+  		float: left;
+}
+
+
+.fiveTables { 	
+	/* pro zobrazeni 5 veci vedle sebe */
+		width: 20%;
+  		float: left;
+}
+
+.right80{
+		width: 80%;
+		float: left;
+}
+
+
+
+.fourTables {	
+	/* pro zobrazeni 4 veci vedle sebe */
+		width: 25%;
+		float: left;
+}
+
+.threeTables {
+	/* pro zobrazeni 3 veci vedle sebe */
+		width: 33%;
+		float: left;
+}
+
+.twoTables {
+	/* pro zobrazeni 2 veci vedle sebe */
+   		width: 50%;
+		float: left;    
+}
+
+footer {
+  		clear:both; /*zruseni dedicnosti predhozich stylu*/
+  		text-align:center;
+  		
+}	
+
+
+.animbuttons button{
+		margin:0;padding:0;
+		height: 2em; 
+	/*	min-width: 12ex;*/
+}
+
+/*cast pro animacni tabulky*/
+.animeTables table{
+    /* pro animacni tabulky */
+    	margin: 1em 0;
+  		border: 2px solid black;	  	/* 2px silna cara, plna cara, cerna */
+  		border-collapse:collapse;  		/* spojene cary mezi bunkami */
+}
+  
+.animeTables th , .animeTables td{
+	/* pro vsechny bunky v tabulce*/
+		min-width: 6ex; height: 1.7em;     	/*  rozmery bunek */		
+		border: 1px solid #C8C8C8;		/* 1px silna cara, plna cara, seda */	
+		padding: 0;	margin: 0;			/*zruseni vsech okraju*/   
+	
+		text-align: center;				/* text na stred */ 
+		font-weight: bold;
+}
+
+.animeTables th {
+    /*  */
+   		background-color:#ddd;				/* seda */
+		border-bottom: 2px solid black; /* dolni cara 2pixelova */
+}
+  
+.animeTables .variablesColumn {
+    /*  */
+    	background-color:#EEEEEE;				/* seda */
+    	border-right: 2px solid black; 	/* prava cara 2 pixelova */
+}
+
+.animeTables .variablesWider {
+		width: 30ex; height: 1.7em; 
+    	border-right: 2px solid black; 	/* prava cara 2 pixelova */
+}
+
+/*užito v KNF/DNF*/
+.animeTables .variableInput {
+		width: 12ex; height: 1.7em; 
+    	border-right: 2px solid black; 	/* prava cara 2 pixelova */
+    	background-color:#EEEEEE;				/* seda */
+}
+
+.animeTables img{
+		padding: 0; border: 0px; margin: 0; /*bez zadneho ohraniceni*/
+}
+
+
+/*cast pro animacni rezoluce*/
+.animResolution table{
+    /* pro rezolucni tabulky */
+   		margin: 1em 0;
+    	border: 0px;				  	/* 2px silna cara, plna cara, cerna */
+  		border-collapse:collapse;  		/* spojene cary mezi bunkami */
+}
+
+.animResolution td{
+		width: 80px; height: 25px;     	/*  rozmery bunek */
+		border: 0px;					/*  bez hranic */
+	
+		text-align: center;	
+		font-weight: bold;
+		font-size:medium;
+}
+
+#buttonAnimPlay{
+	margin:0;padding:0;
+	min-width: 12ex; height: 2em;
+}
+
+.blue{
+	color:blue; 
+}
+/* cast pro samotne animacni funkce */
+/*mezikrok promennych tabulky*/
+ .mediateStep, .blue {
+    /* bunka ktera se animuje */
+   		color:blue;    
+   		/*background-color: 	 	#f5f5f5;*/
+ }
+
+/*barva vkladaci tabulky*/  
+.animeStep {
+    /* blue; */
+    	color: #00008b;
+  }
+
+.green , #green/*, .correct*/{
+		color: 	#32cd32;
+}
+
+/*spojka tabulky*/
+.imported /*, .wrong */{
+    /*  */
+    /*	color:red;*/
+   color:#0000FF;
+}
+
+/*.wrong,*/ #red, .red {
+    
+    color:red;
+}
+
+.yellow{
+	color: #FFD700;
+}
+
+.orange{
+	color: 	#b8860b;
+}
+
+.graybackground{
+	background-color:#ddd;
+}
+
+.purple{
+	color:#9400D3;
+ }
+.olderVariables {
+    /* zesedivene pozustatky po animaci */
+    	color: 	#a9a9a9 ;	/* seda*/
+}
+
+.prologStep {
+		position: relative; top: 0px; left: 40px /* posun promenne k care v prologu*/
+}
+
+.prologStepShort {
+		position: relative; top: 0px; left: 30px /* posun promenne uz s necim jinym k care v prologu*/
+}
+
+.resolutionFormula {
+	font-weight: bold;
+}
+

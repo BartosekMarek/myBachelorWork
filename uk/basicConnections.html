@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="author" content="Marek Bartošek">
+		<meta name="version" content="1.0.0 - 10.12.2014">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"> <!--for mobiles devices-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- for the most new compile in webwiewers-->
+
+        <link rel="stylesheet" type="text/css" href="../style/stylopisLogika.css">           
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../jslibrary/baseAnime.js"></script>
+        <script src="../jslibrary/basicLogicConnects.js"></script>
+        
+        <title>Introduction to Logic-basic logic connections</title>        
+	</head>
+
+<!--
+	ID:		-animTableNot
+			-animNot
+			-animTableAnd
+			-animAnd
+			-animTableOr
+			-animOr
+			-animTableImpl
+			-animImpl
+			-animTableEque
+			-animEque
+			
+			-buttonAnimSlower
+			-buttonAnimFaster
+			-control
+	
+	class: 	-insertBody
+			-fiveTables
+			-animeTables	
+-->
+	<body>
+    	<!--real head-->
+    	<header>
+    		<div class="flags">
+    			<a href="../cs/zakladniLogickeSpojky.html"><img src="../style/img/flags/flag_czech_icon.png" width="30" height="20" alt="cze"></a>
+    			<!--a href="svk/index.html"><img src="../style/img/flags/flag_slovakia_icon.png" width="30" height="20" alt="svk"></a-->
+    		</div>
+		
+			<h1>Basic logic connections</h1>
+		</header>
+        
+		<!--menu-->        
+        <nav>
+        <hr class="menuHr"/> 
+		<table>
+			<tr>
+				<td>        		
+        			<ul class="menu">		
+						<li class="first" ><a href="index.html">Home</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a  class="active" href="basicConnections.html">Basic connections</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">
+						<li><a href="truthTable.html">Truth Table</a>
+							<ul>
+								<li><a href="truthTableTautology.html">- tautology</a></li>
+								<li><a href="truthTableContradiction.html">- contradiction</a></li>
+								<li><a href="truthTableInterpretation.html">- interpretation</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">	
+						<li><a href="KNFDNF.html">CNF, DNF</a></li>
+					</ul>
+				</td>
+				<td>        		
+        			<ul class="menu">								
+						<li><a href="resolution.html">Resolutions</a>
+							<ul id="podmenu2" class="clearfix">
+								<li><a href="resolutionTree.html">Resolution-tree</a></li>
+								<li><a href="resolutionLinear.html">Linear resolution</a></li>
+								<li><a href="resolutionLI.html">LI resolution</a></li>
+								<li><a href="resolutionLD.html">LD resolution</a></li>
+								<li><a href="resolutionSLD.html">SLD resolution</a></li>
+								<!--li><a href="resolutionProlog.html">SLD Rezoluce-prolog</a></li-->
+							</ul>
+						</li>	
+					</ul>
+     			</td>            
+    		</tr>
+		</table>
+        <hr class="menuHr"/>
+        </nav>
+
+		<!--real body-->
+        <div class="insertBody">
+
+        		<ul>
+        		Rules for connections:
+        		<li> Negation (&not; ) reverse value. From 0 create 1 and oposite. </li>
+        		<li> Conjunction (&and; ) if found 0, than result always are 0.</li>
+        		<li> Disjunction (&or; ) if found 1, than result always are 1.</li>
+        		<li> Implication (&rArr; ) when it begins with 0, then it is automatically true. Only in case of 1=>0 result is 0.</li>
+        		<li> Equivalence (&hArr; ) if both aren't same value, result is 0.       	</li>	
+        		Using more animations in same time is disabled.  
+        		</ul>
+
+        	<hr>
+        	<br>
+				<section class="animeTables">
+        		<h5>Anime area</h5>
+        		           		
+        		<span class="fiveTables">	
+        			<p>Unary connection NOT</p>
+        			<p>word: NEGATION</p>
+        			<p>symbol: &not;</p>
+					<table id="animTableNot" border="1">
+					  <tbody>
+						<tr>
+							<th>&not;					</th>
+							<th>a				</th>
+						</tr>						
+						<tr>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+					  </tbody>
+					</table>
+				 <br>
+				 <br>
+				 <br>
+				 <br>
+				 <button id="animNot">
+					&#x25B6;
+				 </button>					
+				</span>
+        		
+        		<span class="fiveTables">	
+        			<p>Binary connection AND</p>
+        			<p>word: CONJUNCTION</p>
+        			<p>symbol: &and;</p>
+        		  <table id="animTableAnd" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&and;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+				  </table>
+				<br>
+				<button id="animAnd">
+					&#x25B6;
+				</button>
+				</span>
+				
+				<span class="fiveTables">
+					<p>Binary connection OR</p>
+        			<p>word: DISJUNCTION</p>
+        			<p>symbol: &or;</p>
+					<table id="animTableOr" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&or;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+					</table>
+					<br>
+					<button id="animOr">
+						&#x25B6;
+					</button>
+				</span>
+				
+				<span class="fiveTables">
+					<p>Binary connection &rArr;</p>
+        			<p>word: IMPLICATION</p>
+        			<p>symbol: &rArr;</p>
+					<table id="animTableImpl" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&rArr;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+					</table>
+					<br>
+					<button id="animImpl">
+						&#x25B6;
+					</button>
+				</span>
+				
+				<span class="fiveTables">
+					<p>Binary connection &hArr;</p>
+        			<p>word: EQUIVALENCE</p>
+        			<p>symbol: &hArr;</p>
+					<table id="animTableEque" border="1">
+					<tbody>
+						<tr>
+							<th>a					</th>
+							<th>&hArr;				</th>
+							<th>b					</th>
+						</tr>						
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>0					</td>
+							<td>					</td>
+							<td>1					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>0					</td>
+
+						</tr>
+						<tr>
+							<td>1					</td>
+							<td>					</td>
+							<td>1					</td>
+						</tr>
+					</tbody>
+					</table>
+					<br>
+					<button id="animEque">
+						&#x25B6;
+					</button>
+				</span>								 	
+        		</section> 
+
+       			<div class="center">
+       				<button id="buttonAnimSlower">
+						slower
+					</button> 
+				 	time of play: <span id="timeControl">2.00 s </span>
+				 	<button id="buttonAnimFaster">
+						faster	
+					</button>	
+				</div>     
+       </div> 		
+		
+		<!--div class="notes"> 	     Legenda barev: <br>
+        		<span class="blue">Modrá</span> - je využita jen k zobrazení, která spojka se používá.
+        		<span class="wrong">Červená</span> - je využita jen k zobrazení 0, a při animaci pokud se to bere v potaz.
+        		<span class="correct">Zelená</span> - je využita jen k zobrazení 1, a při animaci pokud se to bere v potaz.
+		</div-->
+		<hr>
+    	<footer><div class="copyright"><h6>Optimized for Firefox 31.0 , Chrome 37 a Internet Explorer 11. * Made by student MUNI FI Marek Bartošek 2014 * Updated 16.1.2015 1:32 </h6></div>  		
+    	</footer>   
+    	
+
+	</body>
+</html>
